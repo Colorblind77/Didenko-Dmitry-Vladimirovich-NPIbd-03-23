@@ -1,0 +1,15 @@
+// 7. Идет k-я секунда суток.
+// Определите, сколько полных часов и минут прошло к этому моменту от начала суток.
+#include <iostream>
+using namespace std;
+
+
+int main()
+{
+	int s, m, h;
+	cin >> s;
+	m = s / 60;
+	h = m / 60;
+	m = m % 60;
+	cout << h << " hours " << m << " minutes";
+}
