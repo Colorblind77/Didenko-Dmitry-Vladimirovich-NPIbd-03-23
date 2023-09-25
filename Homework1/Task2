@@ -1,0 +1,15 @@
+// 18. Даны два числа. 
+// Найти среднее арифметическое кубов этих чисел и среднее геометрическое модулей этих чисел
+
+#include <iostream>
+using namespace std;
+
+
+int main()
+{
+	float a, b;
+	cin >> a >> b;
+	float avarageOfCubes = (a * a * a + b * b * b) / 2;
+	float avarageGeometricalOfModules = sqrt(abs(a * b));
+	cout << avarageOfCubes<<endl<<avarageGeometricalOfModules;
+}
