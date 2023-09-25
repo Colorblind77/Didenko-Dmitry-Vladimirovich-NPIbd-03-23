@@ -1,0 +1,125 @@
+#include <iostream>
+using namespace std;
+
+
+int main() {
+    int a, b, c, d;
+    cin >> a >> b >> c >> d;
+    if (a > b) {
+        if (b > c) {
+            if (d > b) {
+                if (d > a) {
+                    cout << d << ' ' << a << ' ' << b << ' ' << c;
+                }
+                else {
+                    cout << a << ' ' << d << ' ' << b << ' ' << c ;
+                }
+            }
+            else {
+                if (d > c) {
+                    cout << a << ' ' << b << ' '; d << ' ' << c ;
+                }
+                else {
+                    cout << a << ' ' << b << ' ' << c << ' ' << d ;
+                }
+            }
+        }
+        else {
+            if (a > c) {
+                if (d > c) {
+                    if (d > a) {
+                        cout << d << ' ' << a << ' ' << c << ' ' << b ;
+                    }
+                    else {
+                        cout << a << ' ' << d << ' ' << c << ' ' << b ;
+                    }
+                }
+                else {
+                    if (d > b) {
+                        cout << a << ' ' << c << ' ' << d << ' ' << b ;
+                    }
+                    else {
+                        cout << a << ' ' << c << ' ' << b << ' ' << d ;
+                    }
+                }
+            }
+            else {
+                if (d > a) {
+                    if (d > c) {
+                        cout << d << ' ' << c << ' ' << a << ' ' << b ;
+                    }
+                    else {
+                        cout << c << ' ' << d << ' ' << a << ' ' << b;
+                    }
+                }
+                else {
+                    if (d > b) {
+                        cout << c << ' ' << a << ' ' << d << ' ' << b ;
+                    }
+                    else {
+                        cout << c << ' ' << a << ' ' << b << ' ' << d ;
+                    }
+                }
+            }
+        }
+    }
+    else {
+        if (a > c) {
+            if (d > a) {
+                if (d > b) {
+                    cout << d << ' ' << b << ' ' << a << ' ' << c ;
+                }
+                else {
+                    cout << b << ' ' << d << ' ' << a << ' ' << c ;
+                }
+            }
+            else {
+                if (d > c) {
+                    cout << b << ' ' << a << ' ' << d << ' ' << c ;
+                }
+                else {
+                    cout << b << ' ' << a << ' ' << c << ' ' << d ;
+                }
+            }
+        }
+        else {
+            if (b > c) {
+                if (d > c) {
+                    if (d > b) {
+                        cout << d << ' ' << b << ' ' << c << ' ' << a ;
+                    }
+                    else {
+                        cout << b << ' ' << d << ' ' << c << ' ' << a ;
+                    }
+                }
+                else {
+                    if (d > a) {
+                        cout << b << ' ' << c << ' ' << d << ' ' << a ;
+                    }
+                    else {
+                        cout << b << ' ' << c << ' ' << a << ' ' << d ;
+                    }
+                }
+            }
+            else {
+                if (d > a) {
+                    if (d > b) {
+                        cout << d << ' ' << b << ' ' << c << ' ' << a ;
+                    }
+                    else {
+                        cout << b << ' ' << d << ' ' << c << ' ' << a ;
+                    }
+                }
+                else {
+                    if (d > c) {
+                        cout << c << ' ' << a << ' ' << b << ' ' << d ;
+                    }
+                    else {
+                        cout << c << ' ' << a << ' ' << b << ' ' << d ;
+                    }
+                }
+            }
+        }
+    }
+
+}
