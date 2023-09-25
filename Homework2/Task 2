@@ -1,0 +1,21 @@
+//18. Даны три целых числа, одно из которых отлично от двух других, 
+//    равных между собой. Определить порядковый номер числа, отличного от остальных;
+
+#include <iostream>
+using namespace std;
+
+int main() {
+    int a, b, c;
+    cout << "Vvedite 3 chisla, 2 iz kotoryh odinakovy";
+    cin >> a >> b >> c;
+    if (a == b) {
+        cout << c << " otlichaetsa";
+    }
+    else if (b == c) {
+        cout << a << " otlichaetsa";
+    }
+    else if (a == c) {
+        cout << b << " otlichaetsa";
+    }
+    else cout << "You are an Idiot";
+}
