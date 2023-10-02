@@ -1,0 +1,31 @@
+//Диденко Дмитрий Владимирович, НПИбд-03-23
+//22. Написать программу калькулятор, которая выполняет арифметические действия, задаваемые в виде:
+//знак_операции, операнд1, операнд2, где знак_операции: 1 – сложение, 2 – вычитание, 3 – умножение, 4 – деление.
+#include <iostream>
+using namespace std;
+
+int main()
+{
+	char znak;
+	float a, b;
+	printf("Vvedite znak operacii: (+, -, *, /)\n");
+	cin >> znak;
+	//защиты от дурака не будет
+	printf("Vvedite pervoe chislo\n");
+	cin >> a;
+	printf("Vvedite vtoroe chislo\n");
+	cin >> b;
+
+	switch (znak) {
+
+	case '+': cout << a + b; break;
+
+	case '-': cout << a - b; break;
+
+	case '*': cout << a * b; break;
+
+	case '/': cout << a / b; break;
+
+
+	}
+}
