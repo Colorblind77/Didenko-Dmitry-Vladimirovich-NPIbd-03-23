@@ -1,0 +1,43 @@
+//Диденко Дмитрий Владимирович, НПИбд-03-23
+//2. Составить программу, которая в зависимости от порядкового номера месяца (1,2,…,12)
+//выводит на экран время года, к которому относится этот месяц.
+
+#include <iostream>
+using namespace std;
+
+int main()
+{
+	int month;
+
+	printf("Vvedite nomer mesyaca ot 1 do 12\n");
+	cin >> month;
+	//защиты от дурака не будет
+
+	switch (month) {
+
+	case 1: printf("Zima"); break;
+
+	case 2: printf("Zima"); break;
+
+	case 3: printf("Vesna"); break;
+
+	case 4: printf("Vesna"); break;
+
+	case 5: printf("Vesna"); break;
+
+	case 6: printf("Leto"); break;
+
+	case 7: printf("Leto"); break;
+
+	case 8: printf("Leto"); break;
+
+	case 9: printf("Osen"); break;
+
+	case 10: printf("Osen"); break;
+
+	case 11: printf("Osen"); break;
+
+	case 12: printf("Zima"); break;
+
+	}
+}
