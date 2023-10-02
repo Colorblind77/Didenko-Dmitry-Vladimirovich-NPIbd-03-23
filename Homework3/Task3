@@ -1,0 +1,32 @@
+//Диденко Дмитрий Владимирович, НПИбд-03-23
+//Написать программу, которая по начальному году эры (млн. лет назад), выводит название эры. 
+//Например, 4500 – катархей, 3500 – архей, 2500 – протерозой, 534 – палеозой, 248 – мезозой, 65 – кайнозой.
+
+#include <iostream>
+using namespace std;
+
+int main()
+{
+	int era;
+	printf("Vvedite god nachala ery(v millionah let nazad): 4500,3500,2500,534,248,65\n");
+	cin >> era;
+	//защиты от дурака не будет
+
+	cout << "Era " << era << " millionov let nazad nazyvaetsa ";
+
+	switch (era) {
+
+	case 4500: cout << " Katarhey"; break;
+
+	case 3500: cout << "Arhey"; break;
+
+	case 2500: cout << "Proterozoy"; break;
+
+	case 534: cout << "Paleozoy"; break;
+
+	case 248: cout << "Mezozoy"; break;
+
+	case 65: cout << "Kaynozoy"; break;
+
+	}
+}
