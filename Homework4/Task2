@@ -1,0 +1,19 @@
+// 6. Напишите программу, которая запрашивает у пользователя число
+// и выводит на экран факториал этого числа.
+#include <iostream>
+using namespace std;
+
+
+int main()
+{
+	setlocale(LC_ALL, "Russian");
+	int a, b;
+	cout << "Введите любое число\n";
+	cin >> a;
+	b = 1;
+	while (a > 1){
+		b *= a;
+		a--;
+	}
+	cout << b << endl;
+}
