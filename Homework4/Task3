@@ -1,0 +1,48 @@
+// 15. Напишите программу, которая запрашивает у пользователя число 
+// и выводит на экран его шестнадцатеричное представление без использования встроенных функций.
+
+// Я устал
+
+#include <iostream>
+using namespace std;
+
+int main()
+{
+	setlocale(LC_ALL, "Russian");
+	int a, b=0;
+	string c="";
+	cout << "Введите любое число\n";
+	cin >> a;
+
+	while (a > 0) {
+		b = a % 16;
+		if (b < 10) {
+			c = to_string(b) + c;
+		}
+		else{
+            switch(b){
+                    case 10: 
+                        	c = "A" + c;
+                        break;
+                    case 11: 
+                        	c = "B" + c;
+                        break;
+                    case 12: 
+                        	c = "C" + c;
+                        break;
+                    case 13: 
+                        	c = "D" + c;
+                        break;
+                    case 14: 
+                        	c = "E" + c;
+                        break;
+                    case 15: 
+                        	c = "F" + c;
+                        break;
+
+                }
+	   }
+	   a/=16;
+	}
+	cout<<c;
+}
