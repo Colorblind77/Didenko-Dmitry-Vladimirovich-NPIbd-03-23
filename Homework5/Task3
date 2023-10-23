@@ -1,0 +1,31 @@
+// Proc40
+// Описать функцию Exp1(x, ε) вещественного типа(параметры x, ε — вещественные, ε > 0), 
+// находящую приближенное значение функции exp(x) 
+#include <iostream>
+using namespace std;
+#include <iomanip>
+
+double Exp1(double x, double e){
+    double ans = 1;
+    double a = x;
+    int i = 1;
+    while (a > e){
+        ans += a;
+        i += 1;
+        a *= x / i;
+    }
+    return ans;
+}
+int main(){
+    double x, array_e[6];
+    cin >> x;
+    for (int i = 0; i < 6; ++i)
+    {
+        cin >> array_e[i];
+    }
+
+    for (int i = 0; i < 6; ++i)
+    {
+        cout << fixed << setprecision(6) << Exp1(x, array_e[i]) << ' ';
+    }
+}
