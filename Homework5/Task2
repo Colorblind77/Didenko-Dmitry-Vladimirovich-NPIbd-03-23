@@ -1,0 +1,35 @@
+// Proc17
+// Описать процедуру PowerA234(A, B, C, D),
+// Описать функцию RootCount(A, B, C) целого типа, 
+// определяющую количество корней квадратного уравнения A·x2 + B·x + C = 0 (A, B, C — вещественные параметры, A ≠ 0).
+// С ее помощью найти количество корней для каждого из трех квадратных уравнений с данными коэффициентами.
+// Количество корней определять по значению дискриминанта : D = B2 – 4·A·C.
+#include <iostream>
+using namespace std;
+
+void Power1234(float a, float b,float c,int &Amount) {
+	float D = 0;
+	D = (b * b) - 4 * a * c;
+	if (D > 0) {
+		Amount = 2;
+	}
+	else if (D == 0) {
+		Amount = 1;
+	}
+	else {
+		Amount = 0;
+	}
+}
+
+int main()
+{
+	setlocale(LC_ALL, "Russian");
+	float a, b, c;
+	int Amount;
+	for (int i = 0; i < 3; i++){
+		cin >> a>>b>>c;
+		Power1234(a, b, c, Amount);
+		cout << Amount<<endl;
+	}
+
+}
