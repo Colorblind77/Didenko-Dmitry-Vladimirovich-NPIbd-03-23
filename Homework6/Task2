@@ -1,0 +1,60 @@
+//Дан целочисленный массив размера N (N>2). Удалить из массива все элементы, встречающиеся ровно два раза, и вывести размер полученного массива и его содержимое. 
+
+#include <iostream>
+using namespace std;
+
+bool isElementInArray(double element, double array[], int array_lenght) {
+    for (int i = 0; i < array_lenght; i++)
+    {
+        if (array[i] == element) {
+            return true;
+        }
+    }
+    return false;
+}
+
+
+int main()
+{
+    int num;
+    cin >> num;
+    double* arr = new double[num];
+    for (int i = 0; i < num; i++) {
+        cin >> arr[i];
+    }
+
+    for (int m = 0; m < num; m++) {
+
+        double mem=-143243;  //мусорная память
+        int k = 0;
+        for (int i = 0; i < num; i++) {
+            if (arr[m] == arr[i]) {
+                k++;
+            }
+            if (k == 2) {
+                mem = arr[m];
+            }
+        }
+
+        //11
+        //10.5 5 5 5 3.14 7 3 2 2 7 8
+        if (k == 2) {
+            while (isElementInArray(mem, arr, num)) {
+                for (int i = 0; i < num; i++) {
+                    if (mem == arr[i]) {
+                        for (int l = i; l < num; l++) {
+                            arr[l] = arr[l + 1];
+                        }
+                    }
+                }
+            }
+            num -= 2;
+        }
+    }
+    cout << num << endl;
+    for (int i = 0; i < num; i++) {
+        cout << arr[i]<<' ';
+    }
+
+    return 0;
+}
