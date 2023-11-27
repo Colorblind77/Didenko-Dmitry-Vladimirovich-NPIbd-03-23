@@ -1,0 +1,45 @@
+/*
+Даны целые положительные числа M, N, число D и набор из N чисел. Сформировать матрицу размера M×N, 
+у которой первая строка совпадает с исходным набором чисел, а элементы каждой следующей строки равны соответствующему элементу предыдущей строки, 
+умноженному на D (в результате каждый столбец матрицы будет содержать элементы геометрической прогрессии). 
+*/
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int main()
+{
+    int m, n, D;
+    float c;
+    cin >> m >> n >> D;
+
+    float* arr = new float[n];
+    for (int i = 0; i < n; i++) {
+        cin >> arr[i];
+    }
+    
+    float** mtrx = new float* [m];
+    for (int i = 0; i < m; i++)
+    {   
+        mtrx[i] = new float[n];
+        for (int j = 0; j < n; j++)
+        {
+            mtrx[i][j] = arr[j]*pow(D,i);
+        }
+    }
+
+//matrix output
+    for (int i = 0; i < m; i++)
+    {
+        for (int j = 0; j < n; j++)
+        {
+            cout << mtrx[i][j] << ' ';
+        }
+        cout << "\n";
+    }
+
+    for (int i = 0; i < m; i++)
+        delete[] mtrx[i];
+    delete[] mtrx;
+    
+}
