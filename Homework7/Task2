@@ -1,0 +1,46 @@
+//Дана матрица размера M × N. В каждой строке матрицы найти минимальный элемент.#include <iostream>
+using namespace std;
+
+float findMinNumberInIntArray(float mas[], int num) {
+    float min = mas[0];
+    for (int i = 1; i < num; i++) {
+        if (mas[i] < mas[i - 1]) {
+            min = mas[i];
+        }
+    }
+    return min;
+}
+
+
+int main()
+{
+
+    
+    int m, n;
+    float c;
+    cin >> m >> n;
+    
+    //matrix input
+    float** mtrx = new float* [m];
+    for (int i = 0; i < m; i++)
+    {   
+        
+        mtrx[i] = new float[n];
+        for (int j = 0; j < n; j++)
+        {
+            cin >> c;
+            mtrx[i][j] = c;
+        }
+    }
+
+    for (int i = 0; i < m; i++) {
+        cout << findMinNumberInIntArray(mtrx[i], n)<<' ';
+    }
+
+
+
+    for (int i = 0; i < m; i++)
+        delete[] mtrx[i];
+    delete[] mtrx;
+
+}
