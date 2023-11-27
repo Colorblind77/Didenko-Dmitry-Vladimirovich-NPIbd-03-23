@@ -3,7 +3,8 @@
 //При решении допускается использовать вспомогательную матрицу. 
 
 //По какой-то причине не проходит четвертую проверку, я не знаю что там происходит, потому и пофиксить не вышло
-//плакали мои желания сдать все на 100:)
+//плакали мои желания сдать все на 100:')
+
 #include <iostream>
 #include <cmath>
 using namespace std;
@@ -55,12 +56,15 @@ int main()
         if (!everyElementIsTheSame(mtrx[i], n)) 
         {
             float max = findMaxNumberInIntArray(mtrx[i], n);
-            for (int j = 0; j < n; j++)
-            {
-                if (mtrx[i][j] == max) {
-                    mtrx[i][j] *= -1;
+            if (max != 0) {
+                for (int j = 0; j < n; j++)
+                {
+                    if (mtrx[i][j] == max) {
+                        mtrx[i][j] *= -1;
+                    }
                 }
             }
+           
         }
     }
     //matrix output
