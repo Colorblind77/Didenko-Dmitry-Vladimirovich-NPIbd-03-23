@@ -1,0 +1,81 @@
+//Дана матрица размера M × N. Элемент матрицы называется ее локальным максимумом, если он больше всех окружающих его элементов.
+//Поменять знак всех локальных максимумов данной матрицы на противоположный.
+//При решении допускается использовать вспомогательную матрицу. 
+
+//По какой-то причине не проходит четвертую проверку, я не знаю что там происходит, потому и пофиксить не вышло
+
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+bool everyElementIsTheSame(float mas[], int num) {
+    bool allSame = true;
+    for (int j = 0; j < num; j++) {
+        if (mas[0] != mas[j]) {
+            allSame = false;
+        }
+    }
+    return allSame;
+}
+
+float findMaxNumberInIntArray(float mas[], int num) {
+    float max = mas[0];
+    for (int i = 1; i < num; i++) {
+        if (mas[i] > mas[i - 1]) {
+            max = mas[i];
+        }
+    }
+    return max;
+}
+
+
+int main()
+{
+
+    
+    int m, n;
+    float c;
+    cin >> m >> n;
+    
+    //matrix input
+    float** mtrx = new float* [m];
+    for (int i = 0; i < m; i++)
+    {   
+        
+        mtrx[i] = new float[n];
+        for (int j = 0; j < n; j++)
+        {
+            cin >> c;
+            mtrx[i][j] = c;
+        }
+    }
+
+    for (int i = 0; i < m; i++)
+    {
+        if (!everyElementIsTheSame(mtrx[i], n)) 
+        {
+            float max = findMaxNumberInIntArray(mtrx[i], n);
+            for (int j = 0; j < n; j++)
+            {
+                if (mtrx[i][j] == max) {
+                    mtrx[i][j] *= -1;
+                }
+            }
+        }
+    }
+    //matrix output
+    for (int i = 0; i < m; i++)
+    {
+        for (int j = 0; j < n; j++)
+        {
+            cout << mtrx[i][j] << ' ';
+        }
+        cout << endl;
+    }
+
+    for (int i = 0; i < m; i++)
+        delete[] mtrx[i];
+    delete[] mtrx;
+
+    return 0;
+}
