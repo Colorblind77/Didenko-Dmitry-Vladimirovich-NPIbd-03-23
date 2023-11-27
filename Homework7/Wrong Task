@@ -1,0 +1,98 @@
+//Дана целочисленная матрица размера M × N.
+//Найти номер последней из ее строк, содержащих максимальное количество одинаковых элементов. 
+
+//я случайно практически доделал это задание. но у что-то намудрил с памятью и оно жаловалось на это.
+//но алгоритм работает, вроде как.
+
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int findMaxNumberInIntArray(int mas[], int num) {
+    int max = mas[0];
+    for (int i = 1; i < num - 1; i++) {
+        if (mas[i] > mas[i - 1]) {
+            max = mas[i];
+        }
+    }
+    return max;
+}
+
+int countSameNumbersInRowOfMatrix(float arr[], int size) {
+    int num=0;
+    int* mas = new int[num];
+
+    for (int m = 0; m < size; m++) {
+        int k = 0;
+        for (int i = 0; i < size; i++) {
+            if (arr[m] == arr[i]) {
+                k++;
+            }
+        }
+        num++;
+        mas[num - 1] = k;
+    }
+
+    return findMaxNumberInIntArray(mas, num);
+}
+
+int main()
+{
+
+    
+    int m, n;
+    float c;
+    cin >> m >> n;
+    
+    //matrix input
+    float** mtrx = new float* [m];
+    for (int i = 0; i < m; i++)
+    {   
+        
+        mtrx[i] = new float[n];
+        for (int j = 0; j < n; j++)
+        {
+            cin >> c;
+            mtrx[i][j] = c;
+        }
+    }
+
+/*
+//matrix output
+    for (int i = 0; i < m; i++)
+    {
+        for (int j = 0; j < n; j++)
+        {
+            cout << mtrx[i][j] << ' ';
+        }
+        cout << endl;
+    }
+    cout << endl;
+*/
+    //counting sames
+    int* sames = new int[m];
+    for (int i = 0; i < m; i++) {
+        sames[i]= countSameNumbersInRowOfMatrix(mtrx[i], n);
+    }
+/*
+    //output sames
+    for (int i = 0; i < m; i++) {
+        cout << sames[i]<<' ';
+    }
+ */  
+    int max = findMaxNumberInIntArray(sames, m);
+    for (int i = m-1; i>=0; i--) {
+        if (sames[i] == max) {
+            cout <<i+1;
+        }
+    }
+
+
+
+
+
+    for (int i = 0; i < m; i++)
+        delete[] mtrx[i];
+    delete[] mtrx;
+    
+}
