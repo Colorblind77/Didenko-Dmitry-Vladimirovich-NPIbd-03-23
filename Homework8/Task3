@@ -1,0 +1,27 @@
+//Дана строка-предложение. Преобразовать строку так, чтобы каждое слово начиналось с заглавной буквы.
+//Словом считать набор символов, не содержащий пробелов и ограниченный пробелами или началом/концом строки.
+//Слова, начинающиеся не с буквы, не изменять. 
+
+#include <iostream>
+#include <string>
+using namespace std;
+int main() {
+    string str;
+    cin >> str;
+    bool newWord = true;
+
+    for (char& c : str) {
+        if (isalpha(c)) { 
+            if (newWord) {
+                c = toupper(c); 
+                newWord = false; 
+            }
+        }
+        else {
+            newWord = true;
+        }
+    }
+
+    cout << str;
+
+}
