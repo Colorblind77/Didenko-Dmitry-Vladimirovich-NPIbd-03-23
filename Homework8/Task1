@@ -1,0 +1,15 @@
+//Дано целое число N (>0). Вывести N последних строчных (то есть маленьких) букв латинского алфавита в обратном порядке (начиная с буквы «z»). Если N > 26 , то присвоить N = 26. 
+//код
+#include <iostream>
+#include <string>
+using namespace std;
+int main()
+{
+	string str = "zyxwvutsrqponmlkjihgfedcba";
+	int n;
+	cin >> n;
+	if (n > 26) n = 26;
+	for (int i = 0; i < n; i++) {
+		cout << str[i]<<' ';
+	}
+}
